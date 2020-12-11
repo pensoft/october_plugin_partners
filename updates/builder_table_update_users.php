@@ -7,7 +7,7 @@ class BuilderTableUpdateUsers extends Migration
 {
     public function up()
     {
-        if (Schema::hasTable('users')) {
+        if (!Schema::hasColumn('users', 'partner_id')) {
             Schema::table('users', function ($table) {
                 $table->integer('partner_id')->nullable();
             });
