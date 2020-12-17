@@ -30,5 +30,9 @@ class Partners extends Model
 		'city' => 'RainLab\Location\Models\State'
 	];
 
+    public function getCountryCodeOptions()
+    {
+        return [$this->country->code => $this->country->code];
+    }
 
 }

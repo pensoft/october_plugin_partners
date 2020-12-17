@@ -13,6 +13,7 @@ class BuilderTableCreatePensoftPartnersPartners extends Migration
             $table->increments('id')->unsigned();
             $table->text('content')->nullable();
             $table->integer('country_id')->nullable();
+            $table->string('country_code', 2)->nullable();
             $table->string('title')->nullable();
             $table->integer('city_id')->nullable();
             $table->string('email')->nullable();

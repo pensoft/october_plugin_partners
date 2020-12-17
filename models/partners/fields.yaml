@@ -21,6 +21,12 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+    country_code:
+        label: Country code
+        span: auto
+        type: dropdown
+        dependsOn: 
+            - country
     city:
         label: City
         nameFrom: name

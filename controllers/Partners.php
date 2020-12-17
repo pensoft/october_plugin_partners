@@ -1,7 +1,6 @@
 <?php namespace Pensoft\Partners\Controllers;
 
 use Backend\Classes\Controller;
-use BackendMenu;
 
 class Partners extends Controller
 {

@@ -6,3 +6,6 @@
 1.0.3:
     - 'Update table users'
     - builder_table_update_users.php
+1.0.4:
+    - 'Update table rainlab_location_countries'
+    - builder_table_update_rainlab_location_countries.php
