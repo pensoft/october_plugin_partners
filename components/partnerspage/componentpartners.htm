@@ -1,21 +1,23 @@
-<div class="row middle-xs mb-2">
-    {% for partner in partners %}
-        <div class="col-xs start-xs">
-            <img src="{{partner.cover.getThumb(200, 100, 'auto')}}" style="max-height: 100px; width: auto; max-width: calc(100vw - 20px); margin: 10px 0;" />
-        </div>
-    {% endfor %}
-</div>
+<div class="list">
 {% for partner in partners %}
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="news-container">
-                <div class="news-title">
-                    <h3 class="card-title">{{partner.title}}</h3>
+        <div class="list-item align-items-start">
+            {%if partner.cover %}
+                <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover.getThumb(280, 100, 'auto')}}')"></div>
+            {% endif %}
+            <div class="list-item-column">
+                {% if partner.title %}
+                    <h3>{{partner.title}}</h3>
+                {% endif %}
+                {% if partner.instituion or partner.city.name or partner.country.name %}
+                    <div class="info"><i class="pr normal p-location"></i> {{ [partner.instituion , partner.city.name , partner.country.name]|filter(v => v is not null)|join(', ') }} </div>
+                {% endif %}
+                {% if partner.email %}
+                    <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
+                {% endif %}
+                <div class="list-item-text">
+                    {{partner.content|raw}}
                 </div>
-                <div class="info"><i class="pr normal p-location"></i> {{ [partner.instituion , partner.city.name , partner.country.name]|filter(v => v is not null)|join(', ') }} </div>
-                <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
-                <div class="body">{{partner.content|raw}}</div>
             </div>
         </div>
-    </div>
 {% endfor %}
+</div>

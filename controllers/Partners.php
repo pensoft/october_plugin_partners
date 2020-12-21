@@ -1,6 +1,7 @@
 <?php namespace Pensoft\Partners\Controllers;
 
 use Backend\Classes\Controller;
+use BackendMenu;
 
 class Partners extends Controller
 {
@@ -12,5 +13,6 @@ class Partners extends Controller
     public function __construct()
     {
         parent::__construct();
+        BackendMenu::setContext('Pensoft.Partners', 'main-menu-item');
     }
 }
