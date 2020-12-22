@@ -33,7 +33,7 @@ class Plugin extends PluginBase
         if (class_exists('\Rainlab\User\Controllers\Users') && class_exists('\Pensoft\Partners\Models\Partners')) {
             \Rainlab\User\Controllers\Users::extendFormFields(function ($form) {
                 $form->addTabFields([
-                    'partner' => [
+                    'partner_id' => [
                         'label' => 'Organization/Partner',
                         'nameFrom' => 'title',
                         'emptyOption' => '-- choose --',
