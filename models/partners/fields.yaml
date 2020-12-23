@@ -47,3 +47,7 @@ fields:
         label: Institution
         span: auto
         type: text
+    instituion_url:
+        label: Institution url
+        span: auto
+        type: text

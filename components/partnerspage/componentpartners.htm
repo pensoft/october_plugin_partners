@@ -8,9 +8,24 @@
                 {% if partner.title %}
                     <h3>{{partner.title}}</h3>
                 {% endif %}
+
                 {% if partner.instituion or partner.city.name or partner.country.name %}
-                    <div class="info"><i class="pr normal p-location"></i> {{ [partner.instituion , partner.city.name , partner.country.name]|filter(v => v is not null)|join(', ') }} </div>
+                    <div class="info">
+                        {% if partner.instituion %}
+                            <i class="pr normal p-institution"></i>{{partner.instituion}}  
+                        {% endif %}
+
+                        {% if partner.city.name %}
+                            {% if partner.instituion %}, {% endif %}
+                            <i class="pr normal p-institution"></i>{{partner.city.name}}  
+                        {% endif %}
+                        {% if partner.country.name %}
+                            {% if partner.city.name or partner.instituion %}, {% endif %}
+                            <i class="pr normal p-institution"></i>{{partner.country.name}}  
+                        {% endif %}
+                    </div>
                 {% endif %}
+                
                 {% if partner.email %}
                     <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
                 {% endif %}
