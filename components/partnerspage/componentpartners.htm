@@ -11,16 +11,17 @@
 
                 {% if partner.instituion or partner.city.name or partner.country.name %}
                     <div class="info">
+                        <i class="pr normal p-location"></i>
                         {% if partner.instituion %}
-                            <i class="pr normal p-institution"></i>{%if partner.instituion_url %}<a href="{{partner.instituion_url}}" target="_blank">{% endif %}{{partner.instituion}}{%if partner.instituion_url %}</a>{% endif %}
+                            {%if partner.instituion_url %}<a href="{{partner.instituion_url}}" target="_blank">{% endif %}{{partner.instituion}}{%if partner.instituion_url %}</a>{% endif %}
                         {% endif %}
                         {% if partner.city.name %}
                             {% if partner.instituion %}, {% endif %}
-                            <i class="pr normal p-institution"></i>{{partner.city.name}}
+                            {{partner.city.name}}
                         {% endif %}
                         {% if partner.country.name %}
                             {% if partner.city.name or partner.instituion %}, {% endif %}
-                            <i class="pr normal p-institution"></i>{{partner.country.name}}
+                            {{partner.country.name}}
                         {% endif %}
                     </div>
                 {% endif %}
