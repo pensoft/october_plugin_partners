@@ -32,6 +32,9 @@ class Partners extends Model
 
     public function getCountryCodeOptions()
     {
+        if(is_null($this->country)){
+            return [];
+        }
         return [$this->country->code => $this->country->code];
     }
 

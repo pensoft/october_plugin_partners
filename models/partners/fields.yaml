@@ -21,6 +21,7 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
+        default: null
     country_code:
         label: Country code
         span: auto
@@ -38,6 +39,7 @@ fields:
         label: Title
         span: auto
         type: text
+        hidden: true 
         comment: 'will be displayed in users info list'
     email:
         label: Email
