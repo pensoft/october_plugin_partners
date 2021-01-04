@@ -40,7 +40,7 @@ class Plugin extends PluginBase
                         'span'  => 'auto',
                         'type'  => 'dropdown',
                         'tab'  => 'rainlab.user::lang.user.account',
-                        'options' => Models\Partners::lists('title', 'id')
+                        'options' => Models\Partners::all()->lists('title', 'id')
                     ]
                 ]);
             });
