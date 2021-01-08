@@ -14,14 +14,6 @@ class PartnersPage extends ComponentBase
 		$this->page['available_countries'] = $this->availableCountries();
 	}
 
-	public function componentDetails()
-	{
-		return [
-			'name' => 'PartnersPage',
-			'description' => 'Displays a collection of partners.'
-		];
-	}
-
 	public function defineProperties()
 	{
 		return [
@@ -29,7 +21,28 @@ class PartnersPage extends ComponentBase
 				'title' => 'Limit items',
 				'description' => 'Limit items',
 				'default' => 0,
-			]
+			],
+			'templates' => [
+				'title' => 'Select templates',
+				'type' => 'dropdown',
+				'default' => 'template1'
+			],
+		];
+	}
+
+	public function getTemplatesOptions()
+	{
+		return [
+			'template1' => 'Template 1 - MAIA',
+			'template2' => 'Template 2 - VOODOO',
+		];
+	}
+
+	public function componentDetails()
+	{
+		return [
+			'name' => 'PartnersPage',
+			'description' => 'Displays a collection of partners.'
 		];
 	}
 
@@ -57,6 +70,7 @@ class PartnersPage extends ComponentBase
 		 } else {
 		 	$this->page['partners'] = $this->partners();
 		 }
+		 $this->page['template'] = $this->property('templates');
 	}
 
 }
