@@ -1,7 +1,7 @@
 <div class="list">
 {% if show_covers_on_top %}
 	{% for partner_image in partners %}
-		<img src="{{partner_image.cover|crop_image|resize(210, 60, 'crop')}}" style="margin: 0 10px 0 10px;">
+		<img src="{{partner_image.cover|crop_image|resize(210, 60, 'fit')}}" style="margin: 0 10px 0 10px;">
 	{% endfor %}
 {% endif%}
 {% for partner in partners %}
