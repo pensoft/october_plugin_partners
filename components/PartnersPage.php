@@ -33,8 +33,8 @@ class PartnersPage extends ComponentBase
 	public function getTemplatesOptions()
 	{
 		return [
-			'template1' => 'Template 1 - MAIA',
-			'template2' => 'Template 2 - VOODOO',
+			'template1' => 'Template 1',
+			'template2' => 'Template 2',
 		];
 	}
 
@@ -70,7 +70,17 @@ class PartnersPage extends ComponentBase
 		 } else {
 		 	$this->page['partners'] = $this->partners();
 		 }
-		 $this->page['template'] = $this->property('templates');
+		 switch ($this->property('templates')){
+			 case 'template1':
+			 default:
+				 $this->page['show_covers_on_top'] = false;
+				 $this->page['is_hidden_cover'] = false;
+			 	break;
+			 case 'template2':
+				 $this->page['show_covers_on_top'] = true;
+				 $this->page['is_hidden_cover'] = true;
+			 	break;
+		 }
 	}
 
 }

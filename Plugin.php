@@ -35,12 +35,12 @@ class Plugin extends PluginBase
                 $form->addTabFields([
                     'partner_id' => [
                         'label' => 'Organization/Partner',
-                        'nameFrom' => 'title',
+                        'nameFrom' => 'instituion',
                         'emptyOption' => '-- choose --',
                         'span'  => 'auto',
                         'type'  => 'dropdown',
                         'tab'  => 'rainlab.user::lang.user.account',
-                        'options' => Models\Partners::lists('title', 'id')
+						'options' => Models\Partners::all()->lists('instituion', 'id')
                     ]
                 ]);
             });

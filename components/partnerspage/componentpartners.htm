@@ -1,12 +1,12 @@
 <div class="list">
-{% if template == 'template2' %}
+{% if show_covers_on_top %}
 	{% for partner_image in partners %}
 		<img src="{{partner_image.cover.getThumb(210, 60, 'fit')}}" style="margin: 0 10px 0 10px;">
 	{% endfor %}
 {% endif%}
 {% for partner in partners %}
         <div class="list-item align-items-start">
-            {%if partner.cover and template != 'template2' %}
+            {%if partner.cover and not is_hidden_cover %}
                 <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover.getThumb(280, 100, 'auto')}}')"></div>
             {% endif %}
             <div class="list-item-column">
