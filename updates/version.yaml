@@ -16,3 +16,5 @@
     - 'Added template1 and template2.'
 1.0.7:
     - 'Set resize of brands.'
+1.0.8:
+    - 'Set additional data for rainlab.user.getNotificationVars event'
