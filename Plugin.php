@@ -2,7 +2,6 @@
 
 use System\Classes\PluginBase;
 use Pensoft\Partners\Components\PartnersPage;
-use Event;
 
 class Plugin extends PluginBase
 {
@@ -17,12 +16,6 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        Event::listen('rainlab.user.getNotificationVars', function ($user) {
-            $code = implode('!', [$user->id, $user->getActivationCode()]);
-            $link = url('/login') . '?activate=' . $code . '&code=' . $code;
-
-            return ['link' => $link, 'surname' => $user->surname];
-        });
         if(class_exists('\RainLab\Location\Controllers\Locations')){
             \RainLab\Location\Controllers\Locations::extendFormFields(function($form, $model){
                 if (!$model instanceof \Rainlab\Location\Models\Country) {

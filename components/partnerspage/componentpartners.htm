@@ -7,7 +7,7 @@
 {% for partner in partners %}
         <div class="list-item align-items-start">
             {%if partner.cover and not is_hidden_cover %}
-                <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover|crop_image|resize(280, 100, 'auto')}}')"></div>
+                <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover.thumb(280,auto)}}')"></div>
             {% endif %}
             <div class="list-item-column">
                 {% if partner.instituion %}
