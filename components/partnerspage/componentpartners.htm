@@ -1,13 +1,13 @@
 <div class="list">
 {% if show_covers_on_top %}
 	{% for partner_image in partners %}
-		<img src="{{partner_image.cover|crop_image|resize(auto, 60, 'crop')}}" style="margin: 0 10px 0 10px;">
+		<img src="{{partner_image.cover|crop_image|resize(null, 60, {mode: 'crop'})}}" style="margin: 0 10px 0 10px;">
 	{% endfor %}
 {% endif%}
 {% for partner in partners %}
         <div class="list-item align-items-start">
             {%if partner.cover and not is_hidden_cover %}
-                <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover.thumb(280,auto)}}')"></div>
+                <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover|crop_image|resize(280, null, {mode: 'crop'})}}')"></div>
             {% endif %}
             <div class="list-item-column">
                 {% if partner.instituion %}
