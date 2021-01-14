@@ -17,6 +17,8 @@
 1.0.7:
     - 'Set resize of brands.'
 1.0.8:
+    - 'Set additional data for rainlab.user.getNotificationVars event'
+1.0.9:
     - 'Partners logos fix.'
 1.0.9:
     - 'Partners logos resize.'
