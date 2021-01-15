@@ -6,7 +6,7 @@
                 <div class="list-item-image gutter-right contain col-xs-12 col-md-2" style="background-image: url('{{partner.cover|crop_image|resize(280, null, {mode: 'crop'})}}')"></div>
             {% endif %}
 			{% if show_covers_on_top %}
-				<div class="col-xs-12 col-md-12"><img src="{{partner.cover|crop_image|resize(220, null, {mode: 'crop'})}}" style="max-height: 150px;"></div>
+				<div class="col-xs-12 col-md-12"><img src="{{partner.cover|crop_image|resize(null, 170, {mode: 'crop'})}}"></div>
 			{% endif%}
             <div class="list-item-column col-xs-12 col-md">
 
