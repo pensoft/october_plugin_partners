@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-sm-6 col-xs-12">
+		{% partial __SELF__ ~ '::svg' available_countries=available_countries %}
+	</div>
+	<div class="col-sm-6 col-xs-12">
+		<div id="mycomponentpartners">
+			{% partial __SELF__ ~ '::componentpartners' partners=partners is_hidden_cover=true hide_list=true %}
+		</div>
+	</div>
+</div>
+<ul class="partners_logos_list">
+	{% partial __SELF__ ~ '::partnerslogos' partners=partners %}
+</ul>

@@ -1,0 +1,11 @@
+{% for partner in partners %}
+	<li>
+		{%if partner.cover %}
+			{% if partner.cover.path|image_width > partner.cover.path|image_height %}
+				<a href="{{partner.instituion_url}}" target="_blank"><div class="partner_cover width"><img src="{{partner.cover|crop_image|resize(120, null, {mode: 'crop'})}}" title="{{partner.instituion}}"></div></a>
+			{% else %}
+				<a href="{{partner.instituion_url}}" target="_blank"><div class="partner_cover height"><img src="{{partner.cover|crop_image|resize(null, 80, {mode: 'crop'})}}" title="{{partner.instituion}}"></div></a>
+			{% endif %}
+		{% endif %}
+	</li>
+{% endfor %}

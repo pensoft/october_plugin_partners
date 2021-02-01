@@ -35,6 +35,7 @@ class PartnersPage extends ComponentBase
 		return [
 			'template1' => 'Template 1',
 			'template2' => 'Template 2',
+			'template3' => 'Template 3',
 		];
 	}
 
@@ -78,6 +79,10 @@ class PartnersPage extends ComponentBase
 			 	break;
 			 case 'template2':
 				 $this->page['show_covers_on_top'] = true;
+				 $this->page['is_hidden_cover'] = true;
+			 	break;
+			 case 'template3':
+				 $this->page['show_covers_on_top'] = false;
 				 $this->page['is_hidden_cover'] = true;
 			 	break;
 		 }
