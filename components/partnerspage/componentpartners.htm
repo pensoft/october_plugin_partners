@@ -27,6 +27,10 @@
 						</div>
 					{% endif %}
 
+                {% if partner.instituion %}
+                    <h3>{%if partner.instituion_url %}<a href="{{partner.instituion_url}}" target="_blank">{% endif %}{{partner.instituion}}{%if partner.instituion_url %}</a>{% endif %}</h3>
+                {% endif %}
+
 					{% if partner.email %}
 						<div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
 					{% endif %}
