@@ -12,6 +12,7 @@ function handleSVGMapMouseMove(event) {
         case "DZ":
         case "AS":
         case "AD":
+        case "AD":
         case "AO":
         case "AI":
         case "AQ":

@@ -11,8 +11,8 @@ fields:
         imageWidth: '270'
         type: fileupload
     content:
-        label: Content
-        size: ''
+        label: 'pensoft.partners::lang.plugin.description'
+        size: large
         span: auto
         type: richeditor
     country:
@@ -23,10 +23,10 @@ fields:
         type: relation
         default: null
     country_code:
-        label: Country code
+        label: 'Country code'
         span: auto
         type: dropdown
-        dependsOn: 
+        dependsOn:
             - country
     city:
         label: City
@@ -39,7 +39,7 @@ fields:
         label: Title
         span: auto
         type: text
-        hidden: true 
+        hidden: true
         comment: 'will be displayed in users info list'
     email:
         label: Email
@@ -50,6 +50,6 @@ fields:
         span: auto
         type: text
     instituion_url:
-        label: Institution url
+        label: 'Institution url'
         span: auto
         type: text

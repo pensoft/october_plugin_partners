@@ -34,6 +34,8 @@
 						{{partner.content|raw}}
 					</div>
 				{% endif %}
+				{% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">Visit website</a>{% endif %}
+
             </div>
         </div>
 {% endfor %}
