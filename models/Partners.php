@@ -8,6 +8,7 @@ use Model;
 class Partners extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+	use \October\Rain\Database\Traits\NestedTree;
     
 
     /**
@@ -37,5 +38,10 @@ class Partners extends Model
         }
         return [$this->country->code => $this->country->code];
     }
+
+	public function getFullNameAttribute()
+	{
+		return $this->instituion . " - " . $this->type;
+	}
 
 }
