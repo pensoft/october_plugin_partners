@@ -53,3 +53,13 @@ fields:
         label: 'Institution url'
         span: auto
         type: text
+    type:
+        label: Type
+        options:
+            1: Partners
+            2: Transnational
+            3: Virtual
+            4: Supporting
+        showSearch: true
+        span: auto
+        type: dropdown

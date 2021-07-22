@@ -29,15 +29,15 @@ class PartnerList extends ComponentBase
 	public function getPartners()
 	{
 		if($this->property('maxItems') > 0){
-			return Partners::take($this->property('maxItems'))->get();
+			return Partners::take($this->property('maxItems'))->where('type', 1)->get();
 		}
-		return Partners::get();
+		return Partners::where('type', 1)->get();
 	}
 
 	public function onFilterSVGMap()
 	{
 		if(post('country')){
-			$this->page['partners'] = Partners::where('country_id', post('country'))->get();
+			$this->page['partners'] = Partners::where('country_id', post('country'))->where('type', 1)->get();
 		}else{
 			$this->page['partners'] = $this->getPartners();
 		}
