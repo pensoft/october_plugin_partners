@@ -1,5 +1,7 @@
 <?php namespace Pensoft\Partners\Models;
 
+use Database\Tester\Models\Country;
+use RainLab\Location\Models\Country as CountryModel;
 use Model;
 
 /**
@@ -22,21 +24,34 @@ class Partners extends Model
     public $rules = [
     ];
 
+	protected $jsonable = [
+		'country_code'
+	];
+
     public $attachOne = [
         'cover' => 'System\Models\File'
     ];
 
 	public $belongsTo = [
-		'country' => ['RainLab\Location\Models\Country', 'scope' => 'isEnabled'],
 		'city' => 'RainLab\Location\Models\State'
+	];
+
+	public $belongsToMany = [
+		'country' => [
+			'RainLab\Location\Models\Country',
+			'table' => 'pensoft_partners_countries',
+			'order' => 'name'
+		],
 	];
 
     public function getCountryCodeOptions()
     {
-        if(is_null($this->country)){
-            return [];
-        }
-        return [$this->country->code => $this->country->code];
+		return CountryModel::whereNotNull('is_enabled')->where('is_enabled', true)->lists('code', 'code');
+    }
+
+    public function getCountryOptions()
+    {
+		return CountryModel::whereNotNull('is_enabled')->where('is_enabled', true)->lists('name', 'id');
     }
 
 	public function getFullNameAttribute()

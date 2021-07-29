@@ -68,7 +68,7 @@ class PartnersPage extends ComponentBase
 	public function onPartners()
 	{
 		if (post('code')) {
-			$this->page['partners'] = ModelPartners::where('country_code', post('code'))->where('type', 1)->get();
+			$this->page['partners'] = ModelPartners::whereRaw('country_code ILIKE \'%'.post('code').'%\'')->where('type', 1)->get();
 		} else {
 			$this->page['partners'] = $this->partners();
 		}

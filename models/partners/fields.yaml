@@ -15,26 +15,6 @@ fields:
         size: large
         span: auto
         type: richeditor
-    country:
-        label: Country
-        nameFrom: name
-        descriptionFrom: description
-        span: auto
-        type: relation
-        default: null
-    country_code:
-        label: 'Country code'
-        span: auto
-        type: dropdown
-        dependsOn:
-            - country
-    city:
-        label: City
-        nameFrom: name
-        descriptionFrom: description
-        emptyOption: '-- choose--'
-        span: auto
-        type: relation
     title:
         label: Title
         span: auto
@@ -63,3 +43,18 @@ fields:
         showSearch: true
         span: auto
         type: dropdown
+    add_description:
+        label: 'Additional description'
+        size: large
+        span: auto
+        type: richeditor
+    country:
+        label: Countries
+        span: auto
+        type: checkboxlist
+    country_code:
+        label: 'Country codes'
+        span: auto
+        dependsOn:
+            - country
+        type: checkboxlist
