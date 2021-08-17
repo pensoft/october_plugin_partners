@@ -12,6 +12,7 @@ function handleSVGMapMouseMove(event) {
         case "DZ":
         case "AS":
         case "AD":
+        case "AD":
         case "AO":
         case "AI":
         case "AQ":
@@ -280,7 +281,23 @@ function onPartners(pCode) {
     }).then(response => {
         $('html, body').animate({
             scrollTop: $("#mycomponentpartners").offset().top - 100
-        }, 1000);
+        }, 0);
+        var tooltip = document.getElementById("tooltip");
+        tooltip.classList.remove("active");
+    });
+}
+
+function onSinglePartner(pId) {
+    $.request('onSinglePartner', {
+        update: { '@componentpartners': '#mycomponentpartners',
+        },
+        data: {
+            partner_id: pId
+        },
+    }).then(response => {
+        $('html, body').animate({
+            scrollTop: $("#mycomponentpartners").offset().top - 100
+        }, 0);
         var tooltip = document.getElementById("tooltip");
         tooltip.classList.remove("active");
     });

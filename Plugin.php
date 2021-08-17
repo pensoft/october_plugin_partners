@@ -52,4 +52,43 @@ class Plugin extends PluginBase
             PartnersPage::class => 'PartnersPage',
         ];
     }
+
+	/**
+	 * Twig extensions
+	 */
+	public function registerMarkupTags()
+	{
+		return [
+			'filters' => [
+				// A global function, i.e str_plural()
+				'image_width' => [$this, 'getImageWidth'],
+				'image_height' => [$this, 'getImageHeight'],
+			],
+		];
+	}
+
+	private $images = [];
+
+	public function getImageWidth($url) {
+		return $this->getImageSize($url) ? $this->getImageSize($url)['width'] : null;
+	}
+
+	public function getImageHeight($url) {
+		return $this->getImageSize($url) ? $this->getImageSize($url)['height'] : null;
+	}
+
+	private function getImageSize($url) {
+		if (!isset($this->images[$url])) {
+			$data = @getimagesize($url);
+			if ($data) {
+				$this->images[$url] = [
+					'width'     => $data[0],
+					'height'    => $data[1],
+				];
+			}else{
+				$this->images[$url] = false;
+			}
+		}
+		return $this->images[$url];
+	}
 }

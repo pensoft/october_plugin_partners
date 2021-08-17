@@ -11,35 +11,15 @@ fields:
         imageWidth: '270'
         type: fileupload
     content:
-        label: Content
-        size: ''
+        label: 'pensoft.partners::lang.plugin.description'
+        size: large
         span: auto
         type: richeditor
-    country:
-        label: Country
-        nameFrom: name
-        descriptionFrom: description
-        span: auto
-        type: relation
-        default: null
-    country_code:
-        label: Country code
-        span: auto
-        type: dropdown
-        dependsOn: 
-            - country
-    city:
-        label: City
-        nameFrom: name
-        descriptionFrom: description
-        emptyOption: '-- choose--'
-        span: auto
-        type: relation
     title:
         label: Title
         span: auto
         type: text
-        hidden: true 
+        hidden: true
         comment: 'will be displayed in users info list'
     email:
         label: Email
@@ -50,6 +30,31 @@ fields:
         span: auto
         type: text
     instituion_url:
-        label: Institution url
+        label: 'Institution url'
         span: auto
         type: text
+    type:
+        label: Type
+        options:
+            1: Partners
+            2: Transnational
+            3: Virtual
+            4: Supporting
+        showSearch: true
+        span: auto
+        type: dropdown
+    add_description:
+        label: 'Additional description'
+        size: large
+        span: auto
+        type: richeditor
+    country:
+        label: Countries
+        span: auto
+        type: checkboxlist
+    country_code:
+        label: 'Country codes'
+        span: auto
+        dependsOn:
+            - country
+        type: checkboxlist

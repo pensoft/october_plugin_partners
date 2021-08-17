@@ -1,38 +1,49 @@
 <div class="list">
-{% if show_covers_on_top %}
-	{% for partner_image in partners %}
-		<img src="{{partner_image.cover|crop_image|resize(auto, 60, 'crop')}}" style="margin: 0 10px 0 10px;">
-	{% endfor %}
-{% endif%}
-{% for partner in partners %}
-        <div class="list-item align-items-start">
-            {%if partner.cover and not is_hidden_cover %}
-                <div class="list-item-image gutter-right contain" style="background-image: url('{{partner.cover.thumb(280,auto)}}')"></div>
-            {% endif %}
-            <div class="list-item-column">
-                {% if partner.instituion %}
-                    <h3>{%if partner.instituion_url %}<a href="{{partner.instituion_url}}" target="_blank">{% endif %}{{partner.instituion}}{%if partner.instituion_url %}</a>{% endif %}</h3>
-                {% endif %}
 
-                {% if partner.city.name or partner.country.name %}
-                    <div class="info">
-                        <i class="pr normal p-location"></i>
-                        {% if partner.city.name %}
-                            {{partner.city.name}}
-                        {% endif %}
-                        {% if partner.country.name %}
-                            {% if partner.city.name %}, {% endif %}
-                            {{partner.country.name}}
-                        {% endif %}
-                    </div>
-                {% endif %}
-                
-                {% if partner.email %}
-                    <div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
-                {% endif %}
-                <div class="list-item-body">
-                    {{partner.content|raw}}
-                </div>
+{% for partner in partners %}
+        <div class="list-item align-items-start row" style="margin-top: 0;">
+            {%if partner.cover and not is_hidden_cover %}
+                <div class="list-item-image gutter-right contain col-xs-12 col-md-2" style="background: url('{{partner.cover|crop_image|resize(280, null, {mode: 'crop'})}}') left no-repeat; background-size: contain;"></div>
+            {% endif %}
+			{% if show_covers_on_top %}
+				<div class="col-xs-12 col-md-12"><img src="{{partner.cover|crop_image|resize(null, 170, {mode: 'crop'})}}"></div>
+			{% endif%}
+            <div class="list-item-column col-xs-12 col-md">
+				{% if not hide_list %}
+					{% if partner.instituion %}
+						<h3>{%if partner.instituion_url %}<a href="{{partner.instituion_url}}" target="_blank">{% endif %}{{partner.instituion}}{%if partner.instituion_url %}</a>{% endif %}</h3>
+					{% endif %}
+
+					{% if partner.city.name or partner.country.count() %}
+						<div class="info">
+							<i class="pr normal p-location"></i>
+							{% if partner.city.name %}
+								{{partner.city.name}}
+							{% endif %}
+							{% if partner.country.count() %}
+								{% for country in partner.country %}
+									{% if partner.city.name %}, {% endif %}
+									{{country.name}}{{ not loop.last ? ',' }}
+								{% endfor %}
+							{% endif %}
+						</div>
+					{% endif %}
+
+					{% if partner.email and __SELF__.property('templates') != 'template5' %}
+						<div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">Contact</a></div>
+					{% endif %}
+					{% if partner.email and __SELF__.property('templates') == 'template5' %}
+					<div class="info"><i class="pr normal p-mail"></i> <a href="mailto:{{partner.email}}">{{partner.email}}</a></div>
+					{% endif %}
+					{% if partner.instituion_url and __SELF__.property('templates') == 'template5' %}
+						<div class="info"><i class="pr normal p-website"></i> <a href="{{partner.instituion_url}}" target="_blank">{{partner.instituion_url}}</a></div>
+					{% endif %}
+					<div class="list-item-body">
+						{{partner.content|raw}}
+					</div>
+				{% endif %}
+				{% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">Visit website</a>{% endif %}
+
             </div>
         </div>
 {% endfor %}
