@@ -1,5 +1,4 @@
 <div class="list">
-
 {% for partner in partners %}
         <div class="list-item align-items-start row" style="margin-top: 0;">
             {%if partner.cover and not is_hidden_cover %}
@@ -45,6 +44,9 @@
 				{% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">Visit website</a>{% endif %}
 
             </div>
+			{% if __SELF__.loggedIn %}
+			<p><a class="edit-link" href="/admin/pensoft/partners/partners/update/{{partner.id}}" target="_blank">Edit</a></p>
+			{% endif %}
         </div>
 {% endfor %}
 </div>

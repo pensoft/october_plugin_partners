@@ -59,4 +59,6 @@
     - 'Updated table pensoft_partners_partners'
     - builder_table_update_pensoft_partners_partners_6.php
 1.0.25:
-    - 'new parameter for template4'
+    - 'New template'
+1.0.26:
+    - 'New template Template 6; edit link;'

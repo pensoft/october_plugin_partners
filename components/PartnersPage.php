@@ -2,16 +2,28 @@
 
 namespace Pensoft\Partners\Components;
 
+use Backend\Facades\BackendAuth;
 use \Cms\Classes\ComponentBase;
 use Pensoft\Partners\Models\Partners as ModelPartners;
 
 class PartnersPage extends ComponentBase
 {
+
+	public $loggedIn;
+
 	public function onRun()
 	{
 		$this->addJs('assets/js/def.js');
 		$this->page['partners'] = $this->partners();
 		$this->page['available_countries'] = $this->availableCountries();
+		$this->page['enabled_countries'] = $this->enabledCountries();
+
+		// by default users are not logged in
+		$this->loggedIn = false;
+		// end then if getUser returns other value than NULL then our user is logged in
+		if (!empty(BackendAuth::getUser())) {
+			$this->loggedIn = true;
+		}
 	}
 
 	public function defineProperties()
@@ -37,6 +49,8 @@ class PartnersPage extends ComponentBase
 			'template2' => 'Template 2',
 			'template3' => 'Template 3',
 			'template4' => 'Template 4',
+			'template5' => 'Template 5',
+			'template6' => 'Template 6',
 		];
 	}
 
@@ -52,6 +66,14 @@ class PartnersPage extends ComponentBase
 	{
 		if(class_exists('\RainLab\Location\Models\Country')){
 			return \RainLab\Location\Models\Country::where('is_enabled', true)->whereNotNull('country_color')->get()->pluck('country_color', 'code');
+		}
+		return [];
+	}
+
+	public function enabledCountries()
+	{
+		if(class_exists('\RainLab\Location\Models\Country')){
+			return \RainLab\Location\Models\Country::where('is_enabled', true)->get()->pluck('name', 'code');
 		}
 		return [];
 	}
@@ -85,9 +107,6 @@ class PartnersPage extends ComponentBase
 			case 'template3':
 				$this->page['show_covers_on_top'] = false;
 				$this->page['is_hidden_cover'] = true;
-				break;
-			case 'template4':
-				$this->page['show_url_button'] = true;
 				break;
 		}
 	}
