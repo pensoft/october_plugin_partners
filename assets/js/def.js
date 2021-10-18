@@ -281,7 +281,7 @@ function onPartners(pCode) {
     }).then(response => {
         $('html, body').animate({
             scrollTop: $("#mycomponentpartners").offset().top - 100
-        }, 0);
+        }, 1000);
         var tooltip = document.getElementById("tooltip");
         tooltip.classList.remove("active");
     });
@@ -297,7 +297,7 @@ function onSinglePartner(pId) {
     }).then(response => {
         $('html, body').animate({
             scrollTop: $("#mycomponentpartners").offset().top - 100
-        }, 0);
+        }, 1000);
         var tooltip = document.getElementById("tooltip");
         tooltip.classList.remove("active");
     });
