@@ -4,6 +4,8 @@ namespace Pensoft\Partners\Components;
 
 use Backend\Facades\BackendAuth;
 use \Cms\Classes\ComponentBase;
+use Pensoft\Cardprofiles\Models\Category;
+use Pensoft\Cardprofiles\Models\Profiles;
 use Pensoft\Partners\Models\Partners as ModelPartners;
 
 class PartnersPage extends ComponentBase
@@ -39,7 +41,43 @@ class PartnersPage extends ComponentBase
 				'type' => 'dropdown',
 				'default' => 'template1'
 			],
+			'button_name' => [
+				'title' => 'Related profiles button name',
+				'default' => 'Insider',
+			],
+			'related-profiles' => [
+				'title' => 'Show related profiles',
+				'type' => 'checkbox',
+				'default' => false,
+			],
+			'show-category-title' => [
+				'title' => 'Show title',
+				'type' => 'checkbox',
+				'default' => false,
+			],
+			'category' => [
+				'title' => 'Select category',
+				'required' => true,
+				'type' => 'dropdown',
+				'description' => 'Select category',
+			],
+			'maxItems' => [
+				'title' => 'Max items',
+				'description' => 'Max items allowed',
+				'default' => 10,
+			],
+
 		];
+	}
+
+	public function getCategoryOptions()
+	{
+		return Category::all()->lists('name', 'id');
+	}
+
+	public function getCategory()
+	{
+		return Category::find($this->property('category'));
 	}
 
 	public function getTemplatesOptions()
@@ -133,6 +171,31 @@ class PartnersPage extends ComponentBase
 				$this->page['is_hidden_cover'] = true;
 				break;
 		}
+	}
+
+
+	public function onInsider()
+	{
+		if (post('partner_id')) {
+			$this->page['insider'] = Profiles::where('partner_id', post('partner_id'))->get();
+			$this->page['partner_id'] = post('partner_id');
+		} else {
+			$this->page['insider'] = '';
+		}
+	}
+
+	public function init()
+	{
+		$component = $this->addComponent(
+			'Pensoft\Cardprofiles\Components\Items',
+			'insiderComponent',
+			[
+				'show-category-title'   => $this->property('show-category-title'),
+				'category'   => $this->property('category'),
+				'maxItems'   => $this->property('maxItems'),
+				'partner_id' => post('partner_id')
+			]
+		);
 	}
 
 }

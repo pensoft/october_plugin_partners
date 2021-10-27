@@ -302,3 +302,19 @@ function onSinglePartner(pId) {
         tooltip.classList.remove("active");
     });
 }
+
+
+
+function onInsider(pPartnerId) {
+	$.request('onInsider', {
+		update: { '@componentinsider': '#mycomponentinsider',
+		},
+		data: {
+			partner_id: pPartnerId
+		},
+	}).then(response => {
+		$('html, body').animate({
+			scrollTop: $("#mycomponentinsider").offset().top - 100
+		}, 1000);
+	});
+}

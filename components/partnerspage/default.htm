@@ -1,1 +1,11 @@
 {% partial __SELF__ ~ "::templates/" ~ __SELF__.property('templates') partners=partners available_countries=available_countries enabled_countries=enabled_countries %}
+{% if __SELF__.property('related-profiles') %}
+<div class="row">
+	<div class="col-sm-12">
+		<div id="mycomponentinsider">
+			{% partial __SELF__ ~ '::componentinsider' insider=insider %}
+		</div>
+	</div>
+</div>
+
+{% endif %}

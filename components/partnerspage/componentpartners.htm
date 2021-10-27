@@ -41,7 +41,11 @@
 						{{partner.content|raw}}
 					</div>
 				{% endif %}
-				{% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">Visit website</a>{% endif %}
+
+				<div>
+					{% if partner.instituion_url and show_url_button %}<a href="{{partner.instituion_url}}" target="_blank" class="btn btn-primary">Visit website</a>{% endif %}
+					{% if __SELF__.property('related-profiles') and partner.cardprofiles.count %}<a href="javascript:void(0);" onclick="onInsider({{partner.id}});" class="btn btn-primary">{{__SELF__.property('button_name')}}</a>{% endif %}
+				</div>
 
             </div>
 			{% if __SELF__.loggedIn %}

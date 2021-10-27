@@ -11,7 +11,8 @@ class Plugin extends PluginBase
     public $require = [
         'rainlab.location',
         'rainlab.user',
-        'pensoft.partners'
+        'pensoft.partners',
+        'pensoft.cardprofiles'
     ];
 
     public function boot()

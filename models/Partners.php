@@ -1,6 +1,7 @@
 <?php namespace Pensoft\Partners\Models;
 
 use Database\Tester\Models\Country;
+use Pensoft\Cardprofiles\Models\Profiles;
 use RainLab\Location\Models\Country as CountryModel;
 use Model;
 
@@ -11,7 +12,7 @@ class Partners extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\NestedTree;
-    
+
 
     /**
      * @var string The database table used by the model.
@@ -42,6 +43,10 @@ class Partners extends Model
 			'table' => 'pensoft_partners_countries',
 			'order' => 'name'
 		],
+	];
+
+	public $hasMany = [
+		'cardprofiles' => [ Profiles::class, 'key' => 'partner_id' ],
 	];
 
     public function getCountryCodeOptions()
