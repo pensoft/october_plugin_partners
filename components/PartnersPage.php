@@ -146,6 +146,9 @@ class PartnersPage extends ComponentBase
 				$this->page['show_covers_on_top'] = false;
 				$this->page['is_hidden_cover'] = true;
 				break;
+			case 'template4':
+				$this->page['show_url_button'] = true;
+				break;
 		}
 	}
 
@@ -169,6 +172,9 @@ class PartnersPage extends ComponentBase
 			case 'template3':
 				$this->page['show_covers_on_top'] = false;
 				$this->page['is_hidden_cover'] = true;
+				break;
+			case 'template4':
+				$this->page['show_url_button'] = true;
 				break;
 		}
 	}

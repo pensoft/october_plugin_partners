@@ -68,3 +68,5 @@
     - 'Related profile cards'
 1.0.29:
     - 'Added link to partner logo'
+1.0.30:
+    - 'Fixed link onPartnersLoad, onSinglePartner'
