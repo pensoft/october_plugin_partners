@@ -4,7 +4,7 @@
 			{% if filter_on_click %}
 				{% set action = 'onclick=onSinglePartner(' ~ partner.id ~ ')' %}
 			{% else %}
-				{% set action = 'href="{{partner.instituion_url}}" target="_blank"' %}
+				{% set action = 'href=' ~partner.instituion_url~ ' target="_blank"' %}
 			{% endif %}
 				{% if partner.cover.path|image_width > partner.cover.path|image_height %}
 				<a {{action}}><div class="partner_cover width"><img src="{{partner.cover|crop_image|resize(120, null, {mode: 'crop'})}}" title="{{partner.instituion}}"></div></a>
