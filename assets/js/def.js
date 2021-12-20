@@ -313,6 +313,27 @@ function onInsider(pPartnerId) {
 			partner_id: pPartnerId
 		},
 	}).then(response => {
+		$('.insider-info .card-body .body').each(function(){
+			var countParagraphs = $(this).find('p').length;
+
+			if(countParagraphs > 1) {
+				$(this).find('p').first().append('<div class="dorsal">Read more</div>');
+				$(this).find('p:not(:first)').wrapAll("<div class='toogle-contact-paragraphs'></div>")
+			}
+		});
+
+		$('.dorsal').click(function () {
+			var link = $(this);
+			link.parent().parent().find('.toogle-contact-paragraphs').slideToggle('slow', function() {
+				if ($(this).is(':visible')) {
+					link.text('Read less');
+				} else {
+					link.text('Read more');
+				}
+			});
+
+		});
+
 		$('html, body').animate({
 			scrollTop: $("#mycomponentinsider").offset().top - 100
 		}, 1000);
