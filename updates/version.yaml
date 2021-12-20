@@ -71,4 +71,6 @@
 1.0.30:
     - 'Fixed link onPartnersLoad, onSinglePartner'
 1.0.31:
+    - 'Fixed partnerslogos template'
+1.0.32:
     - 'Updated OnInsider'
