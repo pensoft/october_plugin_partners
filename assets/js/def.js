@@ -1,3 +1,8 @@
+$(window).scroll(function(){
+	var tooltip = document.getElementById("tooltip");
+	tooltip.classList.remove("active");
+});
+
 function handleSVGMapMouseMove(event) {
     var countryCode = $(event.target).attr('country_code');
     var tooltip = document.getElementById("tooltip");

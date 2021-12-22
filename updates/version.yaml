@@ -74,3 +74,5 @@
     - 'Fixed partnerslogos template'
 1.0.32:
     - 'Updated OnInsider'
+1.0.33:
+    - 'Fixed onmousemove over the map'
