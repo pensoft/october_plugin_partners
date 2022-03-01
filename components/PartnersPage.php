@@ -57,7 +57,7 @@ class PartnersPage extends ComponentBase
 			],
 			'category' => [
 				'title' => 'Select category',
-				'required' => true,
+				'required' => false,
 				'type' => 'dropdown',
 				'description' => 'Select category',
 			],

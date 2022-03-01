@@ -76,3 +76,5 @@
     - 'Updated OnInsider'
 1.0.33:
     - 'Fixed onmousemove over the map'
+1.0.34:
+    - 'Component category is not required'
