@@ -89,6 +89,7 @@ class PartnersPage extends ComponentBase
 			'template4' => 'Template 4',
 			'template5' => 'Template 5',
 			'template6' => 'Template 6',
+			'template7' => 'Template 7',
 		];
 	}
 

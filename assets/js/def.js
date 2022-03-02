@@ -292,6 +292,43 @@ function onPartners(pCode) {
     });
 }
 
+function onCustomPartners(pCode) {
+    $.request('onPartners', {
+        update: { 'components/partners_list': '#mycomponentpartners',
+        },
+        data: {
+            code: pCode
+        },
+    }).then(response => {
+        $('html, body').animate({
+            scrollTop: $("#mycomponentpartners").offset().top - 100
+        }, 1000);
+        var tooltip = document.getElementById("tooltip");
+        tooltip.classList.remove("active");
+
+		$('.partners .partner_description').each(function(){
+			var countParagraphs = $(this).find('p').length;
+			if(countParagraphs > 1) {
+				$(this).find('p').first().append('<div class="dorsal">Read more</div>');
+				$(this).find('p:not(:first)').wrapAll("<div class='toogle-contact-paragraphs'></div>")
+			}
+		});
+
+		$('.dorsal').click(function () {
+			var link = $(this);
+			link.parent().parent().find('.toogle-contact-paragraphs').slideToggle('slow', function() {
+				if ($(this).is(':visible')) {
+					link.text('Read less');
+				} else {
+					link.text('Read more');
+				}
+			});
+
+		});
+
+    });
+}
+
 function onSinglePartner(pId) {
     $.request('onSinglePartner', {
         update: { '@componentpartners': '#mycomponentpartners',
