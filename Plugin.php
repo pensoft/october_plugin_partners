@@ -43,7 +43,8 @@ class Plugin extends PluginBase
                         'span'  => 'auto',
                         'type'  => 'dropdown',
                         'tab'  => 'rainlab.user::lang.user.account',
-						'options' => Models\Partners::all()->lists('instituion', 'id')
+						'options' => Models\Partners::all()->lists('instituion', 'id'),
+                        'default' => 0
                     ]
                 ]);
             });
