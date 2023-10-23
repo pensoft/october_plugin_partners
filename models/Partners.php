@@ -13,7 +13,16 @@ class Partners extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\NestedTree;
+	// For Revisionable namespace
+	use \October\Rain\Database\Traits\Revisionable;
 
+	public $timestamps = false;
+
+	// Add  for revisions limit
+	public $revisionableLimit = 200;
+
+	// Add for revisions on particular field
+	protected $revisionable = ["id","content", "country_id", "country_code", "title", "city_id", "email", "institution"];
 
     /**
      * @var string The database table used by the model.
@@ -61,6 +70,11 @@ class Partners extends Model
 	public $hasMany = [
 		'cardprofiles' => [ Profiles::class, 'key' => 'partner_id' ],
 	];
+
+    // Add  below relationship with Revision model
+    public $morphMany = [
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+    ];
 
     public function getCountryCodeOptions()
     {
