@@ -80,3 +80,12 @@
     - 'Component category is not required'
 1.0.35:
     - 'New template 7'
+1.0.36:
+    - 'Revision history'
+1.0.37:
+    - 'Default value for partner_id when update user data'
+1.0.38:
+    - 'Translate'
+1.0.39:
+    - 'New users fields'
+    - builder_table_update_users_fields.php

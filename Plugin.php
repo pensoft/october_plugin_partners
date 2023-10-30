@@ -42,6 +42,26 @@ class Plugin extends PluginBase
                         'type'  => 'dropdown',
                         'tab'  => 'rainlab.user::lang.user.account',
 						'options' => Models\Partners::all()->lists('instituion', 'id')
+
+                    ],
+                    'is_visible' => [
+                        'label' => 'Visible in insider members list',
+                        'span'  => 'left',
+                        'type'  => 'checkbox',
+                        'tab'  => 'rainlab.user::lang.user.account',
+                    ],
+                    'insider_description' => [
+                        'label' => 'Insider member description',
+                        'span'  => 'left',
+                        'type'  => 'richeditor',
+                        'size'  => 'large',
+                        'tab'  => 'rainlab.user::lang.user.account',
+                    ],
+                    'position' => [
+                        'label' => 'Insider member position',
+                        'span'  => 'right',
+                        'type'  => 'text',
+                        'tab'  => 'rainlab.user::lang.user.account',
                     ]
                 ]);
             });
