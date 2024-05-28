@@ -15,9 +15,10 @@ class BuilderTableUpdatePensoftPartnersPartners6 extends Migration
     
     public function down()
     {
-        Schema::table('pensoft_partners_partners', function($table)
-        {
-            $table->string('country_code', 2)->change();
-        });
+
+        // Schema::table('pensoft_partners_partners', function($table)
+        // {
+        //     $table->string('country_code', 2)->change();
+        // });
     }
 }

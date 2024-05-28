@@ -5,7 +5,7 @@ use System\Classes\PluginBase;
 use Pensoft\Partners\Components\PartnersPage;
 use SaurabhDhariwal\Revisionhistory\Classes\Diff as Diff;
 use System\Models\Revision as Revision;
-
+use Schema;
 class Plugin extends PluginBase
 {
     /**
@@ -20,11 +20,33 @@ class Plugin extends PluginBase
 
     public function boot()
     {
+
+        if (Schema::hasTable('users') && !Schema::hasColumn('users', 'partner_id')) {
+            Schema::table('users', function ($table) {
+                $table->integer('partner_id')->nullable();
+            });
+        }
+
+        if (Schema::hasTable('users') && !Schema::hasColumn('users', 'is_visible')) {
+            Schema::table('users', function ($table) {
+                $table->boolean('is_visible')->default(false);
+                $table->text('insider_description')->nullable();
+                $table->text('position')->nullable();
+            });
+        }
+
+        if (Schema::hasTable('rainlab_location_countries') && !Schema::hasColumn('rainlab_location_countries', 'country_color')){
+            Schema::table('rainlab_location_countries', function ($table) {
+                $table->string('country_color')->nullable();
+            });
+        }
+
         if(class_exists('\RainLab\Location\Controllers\Locations')){
             \RainLab\Location\Controllers\Locations::extendFormFields(function($form, $model){
                 if (!$model instanceof \Rainlab\Location\Models\Country) {
                     return;
                 }
+                
                 $form->addFields([
                     'country_color' => [
                         'label' => 'Country color',

@@ -91,3 +91,5 @@
     - builder_table_update_users_fields.php
 1.0.40:
     - 'Partners'
+1.1.0:
+    - 'Fix Migrations'
