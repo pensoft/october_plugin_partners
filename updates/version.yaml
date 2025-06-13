@@ -93,3 +93,5 @@
     - 'Partners'
 1.1.0:
     - 'Fix Migrations'
+1.1.1:
+    - 'Permissions'

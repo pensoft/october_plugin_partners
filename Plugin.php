@@ -46,7 +46,7 @@ class Plugin extends PluginBase
                 if (!$model instanceof \Rainlab\Location\Models\Country) {
                     return;
                 }
-                
+
                 $form->addFields([
                     'country_color' => [
                         'label' => 'Country color',
@@ -154,4 +154,26 @@ class Plugin extends PluginBase
 		}
 		return $this->images[$url];
 	}
+
+    public function registerPermissions()
+    {
+        return [
+            'pensoft.partners.permission' => [
+                'tab' => 'Partners',
+                'label' => 'Permission to edit partners'
+            ],
+        ];
+    }
+
+    public function registerNavigation()
+    {
+        return [
+            'main-menu-item' => [
+                'label'       => 'Partners',
+                'url'         => \Backend::url('pensoft/partners/partners'),
+                'icon'        => 'icon-hand-o-up',
+                'permissions' => ['pensoft.partners.*'],
+            ],
+        ];
+    }
 }
