@@ -52,7 +52,8 @@ class Partners extends Model
 	];
 
     public $attachOne = [
-        'cover' => 'System\Models\File'
+        'cover' => 'System\Models\File',
+        'background' => 'System\Models\File'
     ];
 
 	public $belongsTo = [

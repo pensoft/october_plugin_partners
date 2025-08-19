@@ -95,3 +95,5 @@
     - 'Fix Migrations'
 1.1.1:
     - 'Permissions'
+1.1.2:
+    - 'Background Cover Image to Model'
