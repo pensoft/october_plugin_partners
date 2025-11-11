@@ -42,6 +42,10 @@ fields:
         label: 'Institution url'
         span: auto
         type: text
+    additional_url:
+        label: 'Additional url'
+        span: auto
+        type: text
     type:
         label: Type
         options:
