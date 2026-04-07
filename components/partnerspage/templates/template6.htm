@@ -1,0 +1,24 @@
+<ul class="partners-countries-list">
+	{% for code, country in enabled_countries %}
+	<li>
+		<a onclick="onPartners('{{code}}');">{{country}}</a>
+	</li>
+	{% endfor %}
+</ul>
+
+<div class="row">
+	<div class="col-xs-12">
+		{% partial 'components/svg' available_countries=available_countries %}
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="col-xs-12">
+		<div id="mycomponentpartners">
+			{% partial __SELF__ ~ '::componentpartners' partners=partners is_hidden_cover=false hide_list=false %}
+		</div>
+	</div>
+</div>
+
+
