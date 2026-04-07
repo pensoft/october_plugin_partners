@@ -1,0 +1,66 @@
+fields:
+    cover:
+        label: Image
+        span: auto
+        mode: image
+        useCaption: true
+        fileTypes: 'svg,png,jpg'
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageWidth: '270'
+        type: fileupload
+        comment: 'Partners Logo'
+    background:
+        label: Background
+        span: auto
+        mode: image
+        useCaption: true
+        fileTypes: 'svg,png,jpg'
+        type: fileupload
+        comment: 'Partners Popup Background Image'
+    content:
+        label: Content
+        size: large
+        span: auto
+        type: richeditor
+    title:
+        label: Title
+        span: auto
+        type: text
+        hidden: true
+        comment: 'will be displayed in users info list'
+    email:
+        label: Email
+        span: auto
+        type: text
+    instituion:
+        label: Institution
+        span: auto
+        type: text
+    instituion_url:
+        label: 'Institution url'
+        span: auto
+        type: text
+    additional_url:
+        label: 'Additional url'
+        span: auto
+        type: text
+    type:
+        label: Type
+        showSearch: true
+        span: auto
+        default: 1
+        type: dropdown
+    add_description:
+        label: 'Additional description'
+        size: large
+        span: auto
+        type: richeditor
+    country_id:
+        label: Country
+        emptyOption: '-- Select country --'
+        showSearch: true
+        span: auto
+        required: 1
+        type: dropdown

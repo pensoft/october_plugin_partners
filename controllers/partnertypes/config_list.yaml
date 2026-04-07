@@ -1,0 +1,12 @@
+list: $/pensoft/partners/models/partnertype/columns.yaml
+modelClass: Pensoft\Partners\Models\PartnerType
+title: Partner Types
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pensoft/partners/partnertypes/update/:id'

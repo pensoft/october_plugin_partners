@@ -1,0 +1,5 @@
+title: Partner Types
+nameFrom: name
+modelClass: Pensoft\Partners\Models\PartnerType
+toolbar:
+    buttons: reorder_toolbar

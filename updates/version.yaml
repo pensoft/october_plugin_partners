@@ -1,0 +1,111 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table pensoft_partners_partners'
+    - builder_table_create_pensoft_partners_partners.php
+1.0.3:
+    - 'Update table users'
+    - builder_table_update_users.php
+1.0.4:
+    - 'Update table rainlab_location_countries'
+    - builder_table_update_rainlab_location_countries.php
+1.0.5:
+    - 'Update table pensoft_partners_partners'
+    - builder_table_update_pensoft_partners_partners.php
+1.0.6:
+    - 'Added template1 and template2.'
+1.0.7:
+    - 'Set resize of brands.'
+1.0.8:
+    - 'Set additional data for rainlab.user.getNotificationVars event'
+1.0.9:
+    - 'Partners logos fix.'
+1.0.10:
+    - 'Partners logos resize.'
+1.0.11:
+    - 'Partners logos position in template2.'
+1.0.12:
+    - 'Partners logos size in template2.'
+1.0.13:
+    - 'New template for listing template3'
+1.0.14:
+    - 'removed duplicate institution link'
+1.0.15:
+    - 'New template for listing template4'
+1.0.16:
+    - 'svg partial'
+1.0.17:
+    - 'Updated table pensoft_partners_partners'
+    - builder_table_update_pensoft_partners_partners_2.php
+1.0.18:
+    - 'Updated table pensoft_partners_partners'
+    - builder_table_update_pensoft_partners_partners_3.php
+1.0.19:
+    - 'Updated table pensoft_partners_partners'
+    - builder_table_update_pensoft_partners_partners_4.php
+1.0.20:
+    - 'Updated table pensoft_partners_partners'
+    - builder_table_update_pensoft_partners_partners_5.php
+1.0.21:
+    - 'Created table pensoft_partners_partners_users'
+    - builder_table_create_pensoft_partners_partners_users.php
+1.0.22:
+    - 'Drop table pensoft_partners_partners_countries'
+    - builder_table_delete_pensoft_partners_partners_countries.php
+1.0.23:
+    - 'Created table pensoft_partners_countries'
+    - builder_table_create_pensoft_partners_countries.php
+1.0.24:
+    - 'Updated table pensoft_partners_partners'
+    - builder_table_update_pensoft_partners_partners_6.php
+1.0.25:
+    - 'New template'
+1.0.26:
+    - 'New template Template 6; edit link;'
+1.0.27:
+    - 'Scroll with animation'
+1.0.28:
+    - 'Related profile cards'
+1.0.29:
+    - 'Added link to partner logo'
+1.0.30:
+    - 'Fixed link onPartnersLoad, onSinglePartner'
+1.0.31:
+    - 'Fixed partnerslogos template'
+1.0.32:
+    - 'Updated OnInsider'
+1.0.33:
+    - 'Fixed onmousemove over the map'
+1.0.34:
+    - 'Component category is not required'
+1.0.35:
+    - 'New template 7'
+1.0.36:
+    - 'Revision history'
+1.0.37:
+    - 'Default value for partner_id when update user data'
+1.0.38:
+    - 'Translate'
+1.0.39:
+    - 'New users fields'
+    - builder_table_update_users_fields.php
+1.0.40:
+    - 'Partners'
+1.1.0:
+    - 'Fix Migrations'
+1.1.1:
+    - 'Permissions'
+1.1.2:
+    - 'Background Cover Image to Model'
+1.1.3:
+    - 'Added additional_url field to partners'
+    - builder_table_update_pensoft_partners_partners_7.php
+
+4.0.1:
+    - 'Migrated to OctoberCMS 4 and PHP 8.2'
+4.0.2:
+    - 'Migrated country from many-to-many to belongsTo relation'
+    - migrate_country_to_belongs_to.php
+4.0.3:
+    - 'Created partner types table with seeded values'
+    - create_partner_types_table.php
