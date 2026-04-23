@@ -109,3 +109,5 @@
 4.0.3:
     - 'Created partner types table with seeded values'
     - create_partner_types_table.php
+4.0.4:
+    - 'composer installers 1 and 2'
