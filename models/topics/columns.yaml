@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: ID
+        type: number
+        invisible: true
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    # A plain subquery: counting through the relation would carry the
+    # Partners NestedTree "order by nest_left", which PostgreSQL rejects.
+    partners_count:
+        label: Partners
+        type: number
+        select: (select count(*) from pensoft_partners_partners where pensoft_partners_partners.topic_id = pensoft_partners_topics.id)
+        sortable: true
+        searchable: false
+    sort_order:
+        label: Order
+        type: number
+        invisible: true

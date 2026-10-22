@@ -12,6 +12,16 @@ columns:
         type: partial
         searchable: true
         path: $/pensoft/partners/partials/_content_column.htm
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    topic:
+        label: Topic
+        relation: topic
+        select: title
+        searchable: true
     created_at:
         label: Date
         type: timesince

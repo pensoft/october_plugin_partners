@@ -55,6 +55,8 @@ class Partners extends Model
 		'city' => [\RainLab\Location\Models\State::class],
 		'country' => [\RainLab\Location\Models\Country::class, 'key' => 'country_id'],
 		'partner_type' => [PartnerType::class, 'key' => 'type'],
+		// Optional; new partners start with the first topic (see Controllers\Partners).
+		'topic' => [Topics::class, 'key' => 'topic_id'],
 	];
 
 	public $hasMany = [

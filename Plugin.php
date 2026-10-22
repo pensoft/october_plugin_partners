@@ -176,6 +176,12 @@ class Plugin extends PluginBase
                         'url'   => \Backend::url('pensoft/partners/partnertypes'),
                         'permissions' => ['pensoft.partners.*'],
                     ],
+                    'topics' => [
+                        'label' => 'Topics',
+                        'icon'  => 'icon-bookmark',
+                        'url'   => \Backend::url('pensoft/partners/topics'),
+                        'permissions' => ['pensoft.partners.*'],
+                    ],
                 ],
             ],
         ];

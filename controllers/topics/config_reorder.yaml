@@ -1,0 +1,5 @@
+title: Topics
+modelClass: Pensoft\Partners\Models\Topics
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

@@ -111,3 +111,7 @@
     - create_partner_types_table.php
 4.0.4:
     - 'composer installers 1 and 2'
+4.0.5:
+    - 'Topics model; partners belong to a topic (optional)'
+    - builder_table_create_pensoft_partners_topics.php
+    - builder_table_update_pensoft_partners_partners_8.php

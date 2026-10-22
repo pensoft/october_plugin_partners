@@ -1,4 +1,11 @@
 fields:
+    topic:
+        label: Topic
+        span: auto
+        type: relation
+        nameFrom: title
+        emptyOption: '-- No topic --'
+        comment: 'Optional. New partners start with the first topic (Partners > Topics).'
     cover:
         label: Image
         span: auto
@@ -28,8 +35,7 @@ fields:
         label: Title
         span: auto
         type: text
-        hidden: true
-        comment: 'will be displayed in users info list'
+        comment: 'Short name / acronym (e.g. IIASA) - shown on the partner logos and in the users info list'
     email:
         label: Email
         span: auto

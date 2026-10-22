@@ -20,4 +20,16 @@ class Partners extends Controller
         parent::__construct();
         BackendMenu::setContext('Pensoft.Partners', 'partners', 'partners');
     }
+
+    /**
+     * New partners start with the first topic selected (it can be cleared).
+     */
+    public function formCreateModelObject()
+    {
+        $model = parent::formCreateModelObject();
+        if (!$model->topic_id && ($first = \Pensoft\Partners\Models\Topics::firstTopic())) {
+            $model->topic_id = $first->id;
+        }
+        return $model;
+    }
 }

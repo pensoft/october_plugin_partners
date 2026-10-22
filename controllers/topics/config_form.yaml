@@ -1,0 +1,10 @@
+name: Topic
+form: $/pensoft/partners/models/topics/fields.yaml
+modelClass: Pensoft\Partners\Models\Topics
+defaultRedirect: pensoft/partners/topics
+create:
+    redirect: 'pensoft/partners/topics/update/:id'
+    redirectClose: pensoft/partners/topics
+update:
+    redirect: pensoft/partners/topics
+    redirectClose: pensoft/partners/topics
