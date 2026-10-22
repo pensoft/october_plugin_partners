@@ -1,0 +1,15 @@
+list: $/pensoft/partners/models/topics/columns.yaml
+modelClass: Pensoft\Partners\Models\Topics
+title: Topics
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pensoft/partners/topics/update/:id'

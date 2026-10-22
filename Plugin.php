@@ -173,6 +173,20 @@ class Plugin extends PluginBase
                 'url'         => \Backend::url('pensoft/partners/partners'),
                 'icon'        => 'icon-hand-o-up',
                 'permissions' => ['pensoft.partners.*'],
+                'sideMenu'    => [
+                    'side-menu-partners' => [
+                        'label'       => 'Partners',
+                        'url'         => \Backend::url('pensoft/partners/partners'),
+                        'icon'        => 'icon-hand-o-up',
+                        'permissions' => ['pensoft.partners.*'],
+                    ],
+                    'side-menu-topics' => [
+                        'label'       => 'Topics',
+                        'url'         => \Backend::url('pensoft/partners/topics'),
+                        'icon'        => 'icon-tags',
+                        'permissions' => ['pensoft.partners.*'],
+                    ],
+                ],
             ],
         ];
     }

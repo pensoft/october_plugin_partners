@@ -57,7 +57,9 @@ class Partners extends Model
     ];
 
 	public $belongsTo = [
-		'city' => 'RainLab\Location\Models\State'
+		'city' => 'RainLab\Location\Models\State',
+		// Optional; new partners start with the first topic (see Controllers\Partners).
+		'topic' => [Topics::class, 'key' => 'topic_id'],
 	];
 
 	public $belongsToMany = [
